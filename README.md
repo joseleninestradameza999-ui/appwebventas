@@ -9,7 +9,7 @@ Sitio de venta de accesorios de computadora y punto de venta sencillo para webap
 
 ## Configuración de Supabase
 
-El navegador usa la clave publicable (segura para cliente) del proyecto `mrsngiseezttrgrcqxlw`; nunca se incluye una clave `service_role` en el navegador. La app necesita permiso público de solo lectura para las columnas de catálogo y vendedor. En el SQL Editor del proyecto ejecuta:
+El navegador usa la clave publicable (segura para cliente) del proyecto `mrsngiseezttrgrcqxlw`. El encabezado `Authorization` usa la clave JWT `anon` heredada para que la Edge Function pueda validar JWT (la clave publicable nueva no es un JWT). Ambas son credenciales públicas con rol `anon`; nunca se incluye una clave `service_role` o `sb_secret` en el navegador. La app necesita permiso público de solo lectura para las columnas de catálogo y vendedor. En el SQL Editor del proyecto ejecuta:
 
 ```sql
 grant select (id_producto, descripcion, stock, precio) on public.producto to anon;

@@ -1,6 +1,9 @@
 const SUPABASE_URL = 'https://mrsngiseezttrgrcqxlw.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_p3Rz1XF1DXQsgtiOoWCRAA_528gTMER';
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const LEGACY_ANON_JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1yc25naXNlZXp0dHJncmNxeGx3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ2NzE2NTAsImV4cCI6MjExMDI0NzY1MH0.IiAN7GVZiDPPpRH9OxxP8sYvuXpefb1H-fLVJnN5EyQ';
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+  global: { headers: { Authorization: `Bearer ${LEGACY_ANON_JWT}` } }
+});
 
 const productGrid = document.querySelector('#product-grid');
 const productSelect = document.querySelector('#product-select');
