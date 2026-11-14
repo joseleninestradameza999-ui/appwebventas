@@ -18,7 +18,7 @@
   <header class="site-header">
     <a class="brand" href="#inicio" aria-label="webaplica, inicio"><span class="brand-mark">w<span>·</span></span><span>webaplica<small>TECNOLOGÍA PARA TU DÍA</small></span></a>
     <nav class="main-nav" aria-label="Navegación principal"><a href="#productos">Productos</a><a href="#servicios">Servicios</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></nav>
-    <a class="header-cta" href="#ventas">Punto de venta <span>↗</span></a>
+    <a class="header-cta" id="sales-link" href="#acceso">Punto de venta <span>↗</span></a>
   </header>
 
   <main>
@@ -49,7 +49,8 @@
 
     <section class="services-section" id="servicios"><div class="services-photo" role="img" aria-label="Técnico trabajando en una computadora"></div><div class="services-copy"><div class="eyebrow light">MÁS QUE UNA TIENDA</div><h2>La tecnología funciona mejor <em>con alguien a tu lado.</em></h2><p>Te ayudamos a elegir, configurar y mantener tus equipos. Soluciones útiles, explicadas en palabras simples.</p><div class="service-list"><article><span class="service-number">01</span><div><h3>Asesoría de compra</h3><p>Elige los accesorios adecuados para tu equipo, presupuesto y forma de trabajar.</p></div><span class="service-arrow">↗</span></article><article><span class="service-number">02</span><div><h3>Instalación y configuración</h3><p>Dejamos tus periféricos listos para usar y conectados como corresponde.</p></div><span class="service-arrow">↗</span></article><article><span class="service-number">03</span><div><h3>Soporte y mantenimiento</h3><p>Diagnóstico y ayuda para que tu computadora vuelva a rendir al máximo.</p></div><span class="service-arrow">↗</span></article></div><a class="button button-lime" href="https://wa.me/51943094835" target="_blank" rel="noreferrer">Cuéntanos qué necesitas <span>↗</span></a></div></section>
 
-    <section class="sales-section" id="ventas"><div class="sales-intro"><div class="eyebrow">HERRAMIENTA PARA EL EQUIPO</div><h2>Un carrito.<br><em>Una venta clara.</em></h2><p>Registra las ventas del día con el catálogo y los precios de Supabase.</p><div class="sales-tip"><span>✳</span><p>El precio y el total se calculan automáticamente para que puedas enfocarte en atender.</p></div></div>
+    <section class="auth-section" id="acceso"><div class="auth-copy"><div class="eyebrow">ACCESO PARA EL EQUIPO</div><h2>Tu punto de venta,<br><em>protegido.</em></h2><p>Inicia sesión con tu cuenta del equipo para registrar ventas.</p></div><form class="auth-card" id="auth-form"><span class="pos-kicker">WEBAPPLICA · EQUIPO</span><h3 id="auth-title">Iniciar sesión</h3><label class="field-label" for="auth-email">Correo electrónico</label><input class="input" id="auth-email" type="email" autocomplete="email" required><label class="field-label" for="auth-password">Contraseña</label><input class="input" id="auth-password" type="password" autocomplete="current-password" minlength="6" required><button class="button button-green auth-submit" id="auth-submit" type="submit">Iniciar sesión <span>↗</span></button><button class="auth-switch" id="auth-switch" type="button">¿Aún no tienes cuenta? Regístrate</button><p class="auth-feedback" id="auth-feedback" role="status"></p></form></section>
+    <section class="sales-section" id="ventas" hidden><div class="sales-intro"><div class="eyebrow">HERRAMIENTA PARA EL EQUIPO</div><h2>Un carrito.<br><em>Una venta clara.</em></h2><p>Registra las ventas del día con el catálogo y los precios de Supabase.</p><div class="sales-tip"><span>✳</span><p>El precio y el total se calculan automáticamente para que puedas enfocarte en atender.</p></div><div class="signed-in"><span id="signed-in-email"></span><button class="auth-switch" id="sign-out" type="button">Cerrar sesión</button></div></div>
       <div class="pos-card"><div class="pos-top"><div><span class="pos-kicker">PUNTO DE VENTA</span><h3>Nueva venta</h3></div><span class="live-pill"><i></i> EN LÍNEA</span></div>
         <label class="field-label" for="seller-select">Vendedor</label><select id="seller-select" class="input"><option value="">Cargando vendedor…</option></select>
         <div class="add-product-row"><div class="field-wrap"><label class="field-label" for="product-select">Producto</label><select id="product-select" class="input"><option value="">Elige un producto</option></select></div><div class="field-wrap quantity-wrap"><label class="field-label" for="quantity">Cantidad</label><input id="quantity" class="input" type="number" min="1" step="1" value="1"></div><button class="add-button" id="add-to-cart" type="button" aria-label="Agregar producto">+</button></div>
@@ -66,4 +67,3 @@
   <div class="toast" id="toast" role="status"></div>
 </body>
 </html>
-
